@@ -36,12 +36,8 @@ class WidgetProvider : AppWidgetProvider() {
 
                 Log.i("lol",widgetText)
                 views.setTextViewText(R.id.textView, widgetText)
-                appWidgetManager.updateAppWidget(appWidgetId, views)
+                appWidgetManager.updateAppWidget(appWidgetId, views) // Tell the AppWidgetManager to perform an update on the current widget
             }.start()
-
-
-            // Tell the AppWidgetManager to perform an update on the current widget.
-            appWidgetManager.updateAppWidget(appWidgetId, views)
         }
     }
 }
