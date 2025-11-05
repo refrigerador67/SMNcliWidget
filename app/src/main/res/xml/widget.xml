@@ -7,4 +7,6 @@
     android:minResizeWidth="40dp"
     android:minResizeHeight="40dp"
     android:resizeMode="horizontal|vertical"
-    android:updatePeriodMillis="1000"/>
+    android:updatePeriodMillis="1000"
+    android:configure="com.refrigerador67.smncli.SettingsActivity"
+    android:widgetFeatures="configuration_optional"/>

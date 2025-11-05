@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SMNCLI</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="main_header">Main</string>
+
+    <string name="tokenbox">API Token</string>
 </resources>
