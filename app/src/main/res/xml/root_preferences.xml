@@ -7,5 +7,9 @@
             app:title="@string/tokenbox"
             app:useSimpleSummaryProvider="true" />
 
+    <EditTextPreference
+        app:key="locationid"
+        app:title="@string/locationbox"
+        app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 </PreferenceScreen>

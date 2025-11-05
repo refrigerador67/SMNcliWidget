@@ -5,16 +5,18 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.widget.RemoteViews
 import android.util.Log
-import com.nixietab.smncliwork.SMNWeather.getWeatherInfo
-
+import androidx.preference.PreferenceManager.getDefaultSharedPreferences
+import com.nixietab.smncliwork.SMNWeather.getWeatherInfoByLocationId
 
 
 class WidgetProvider : AppWidgetProvider() {
+
     override fun onUpdate(
         context: Context,
         appWidgetManager: AppWidgetManager,
         appWidgetIds: IntArray
     ) {
+        val sharedPreferences by lazy {getDefaultSharedPreferences(context)}
 
         appWidgetIds.forEach { appWidgetId ->
             val views = RemoteViews( // Set layout
@@ -24,7 +26,7 @@ class WidgetProvider : AppWidgetProvider() {
 
             Thread {
                 // Code to be executed in the new thread
-                val jsonData = getWeatherInfo("")
+                val jsonData = getWeatherInfoByLocationId(sharedPreferences.getInt("locationid", 10821), sharedPreferences.getString("APIauth", ""))
 
                 val desc = jsonData.getValue("description")
                 val temp = jsonData.getValue("temp")

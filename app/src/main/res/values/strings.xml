@@ -6,4 +6,5 @@
     <string name="main_header">Main</string>
 
     <string name="tokenbox">API Token</string>
+    <string name="locationbox">API Token</string>
 </resources>
