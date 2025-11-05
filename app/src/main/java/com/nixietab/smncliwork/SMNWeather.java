@@ -63,7 +63,7 @@ public class SMNWeather {
         conn.setRequestMethod("GET");
 
         if (jwtToken != null && !jwtToken.isEmpty()) {
-            conn.setRequestProperty("Authorization", "JWT " + jwtToken);
+            conn.setRequestProperty("authorization", "JWT " + jwtToken);
         }
 
         try (BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
