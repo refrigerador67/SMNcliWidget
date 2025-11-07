@@ -36,8 +36,8 @@ class WidgetProvider : AppWidgetProvider() {
                 val wind = jsonData.getValue("wind_speed")
 
                 val widgetText = "$desc\n$temp °C\nHumidity: $humidity%\nPressure: $pressure hPa\nWind: $wind km/h"
-                    Log.i("lol",widgetText)
-                    views.setTextViewText(R.id.textView, widgetText)
+                Log.i("lol",widgetText)
+                views.setTextViewText(R.id.textView, widgetText)
                 }
 
 
