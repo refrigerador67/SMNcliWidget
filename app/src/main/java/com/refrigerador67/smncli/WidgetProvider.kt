@@ -6,6 +6,7 @@ import android.content.Context
 import android.widget.RemoteViews
 import android.util.Log
 import androidx.preference.PreferenceManager.getDefaultSharedPreferences
+import java.util.Calendar
 
 
 class WidgetProvider : AppWidgetProvider() {
@@ -28,18 +29,22 @@ class WidgetProvider : AppWidgetProvider() {
                 val jsonData = getWeatherInfo(sharedPreferences.getString("lat", null), sharedPreferences.getString("lon", null))
 
                 if (jsonData != null){
-                val time = jsonData.getValue("time")
-                val temp = jsonData.getValue("temp")
-                val humidity = jsonData.getValue("humidity")
-                val pressure = jsonData.getValue("pressure")
-                val wind = jsonData.getValue("wind_speed")
 
-                val widgetText = "$time\n$temp °C\nHumidity: $humidity%\nPressure: $pressure hPa\nWind: $wind km/h"
-                Log.i("lol",widgetText)
-                views.setTextViewText(R.id.textView, widgetText)
+                    val calendar = Calendar.getInstance()
+                    val time = calendar.get(Calendar.HOUR).toString() + ":" + calendar.get(Calendar.MINUTE).toString()
+                    val temp = jsonData.getValue("temp")
+                    val humidity = jsonData.getValue("humidity")
+                    val pressure = jsonData.getValue("pressure")
+                    val wind = jsonData.getValue("wind_speed")
+                    val widgetText = "$time\n$temp °C\nHumidity: $humidity%\nPressure: $pressure hPa\nWind: $wind km/h"
+
+                    Log.i("lol",widgetText)
+                    views.setTextViewText(R.id.textView, widgetText)
                 }
+                Thread.sleep(10000)
                 appWidgetManager.updateAppWidget(appWidgetId, views) // Tell the AppWidgetManager to perform an update on the current widget
             }.start()
         }
     }
+
 }
