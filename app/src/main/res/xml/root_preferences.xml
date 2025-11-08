@@ -2,14 +2,22 @@
 
     <PreferenceCategory app:title="@string/main_header">
 
+        <ListPreference
+            app:defaultValue="1"
+            app:entries="@array/provider_strings"
+            app:entryValues="@array/provider_values"
+            app:key="provider"
+            app:title="@string/provider" />
         <EditTextPreference
+            app:enabled="false"
             app:key="APIauth"
             app:title="@string/tokenbox"
             app:useSimpleSummaryProvider="true" />
 
-    <EditTextPreference
-        app:key="locationid"
-        app:title="@string/locationbox"
-        app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            app:enabled="false"
+            app:key="locationid"
+            app:title="@string/locationbox"
+            app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 </PreferenceScreen>
