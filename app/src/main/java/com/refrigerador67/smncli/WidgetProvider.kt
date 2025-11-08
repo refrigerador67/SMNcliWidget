@@ -28,13 +28,13 @@ class WidgetProvider : AppWidgetProvider() {
                 val jsonData = getWeatherInfo(sharedPreferences.getString("lat", null), sharedPreferences.getString("lon", null))
 
                 if (jsonData != null){
-                val desc = jsonData.getValue("description")
+                val time = jsonData.getValue("time")
                 val temp = jsonData.getValue("temp")
                 val humidity = jsonData.getValue("humidity")
                 val pressure = jsonData.getValue("pressure")
                 val wind = jsonData.getValue("wind_speed")
 
-                val widgetText = "$desc\n$temp °C\nHumidity: $humidity%\nPressure: $pressure hPa\nWind: $wind km/h"
+                val widgetText = "$time\n$temp °C\nHumidity: $humidity%\nPressure: $pressure hPa\nWind: $wind km/h"
                 Log.i("lol",widgetText)
                 views.setTextViewText(R.id.textView, widgetText)
                 }

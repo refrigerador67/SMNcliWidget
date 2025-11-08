@@ -20,6 +20,7 @@ fun getWeatherInfo(lat: String?, lon: String?): MutableMap<String, String>? {
         info.put("description", "")
         Log.i("mutable", w.toString())
         if (weather != null) {
+            info.put("time", weather.optDouble("time", Double.Companion.NaN).toString())
             info.put("temp", weather.optDouble("temperature_2m", Double.Companion.NaN).toString())
             info.put("humidity",weather.optDouble("relative_humidity_2m", Double.Companion.NaN).toString())
             info.put("pressure", weather.optDouble("surface_pressure", Double.Companion.NaN).toString())
