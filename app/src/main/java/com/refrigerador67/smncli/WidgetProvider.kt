@@ -5,6 +5,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.widget.RemoteViews
 import android.util.Log
+import android.view.View
 import androidx.preference.PreferenceManager.getDefaultSharedPreferences
 import java.util.Calendar
 
@@ -39,6 +40,7 @@ class WidgetProvider : AppWidgetProvider() {
                     val widgetText = "$time\n$temp °C\nHumidity: $humidity%\nPressure: $pressure hPa\nWind: $wind km/h"
 
                     Log.i("lol",widgetText)
+                    views.setViewVisibility(R.id.widgetBar, View.GONE)
                     views.setTextViewText(R.id.textView, widgetText)
                 }
                 Thread.sleep(10000)

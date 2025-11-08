@@ -3,18 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
+    <ProgressBar
+        android:id="@+id/widgetBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="3dp"
         android:layout_weight="1"
-        android:fontFamily="monospace"
-        android:text="Fetching data"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp" />
+        android:indeterminate="true"
+        android:indeterminateTint="#FFFFFF"
+        android:progressTint="#FFFFFF"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:fontFamily="monospace"
+            android:text="Fetching data"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+    </LinearLayout>
 
 </LinearLayout>
