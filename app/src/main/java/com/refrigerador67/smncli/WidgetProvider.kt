@@ -32,7 +32,7 @@ class WidgetProvider : AppWidgetProvider() {
                 if (jsonData != null){
 
                     val calendar = Calendar.getInstance()
-                    val time = calendar.get(Calendar.HOUR).toString() + ":" + calendar.get(Calendar.MINUTE).toString()
+                    val time = calendar.get(Calendar.HOUR_OF_DAY).toString() + ":" + calendar.get(Calendar.MINUTE).toString()
                     val temp = jsonData.getValue("temp")
                     val humidity = jsonData.getValue("humidity")
                     val pressure = jsonData.getValue("pressure")
