@@ -2,12 +2,13 @@
     <string name="app_name">SMNCLI</string>
     <string name="settings">Settings</string>
     <string name="locate">Refresh Location</string>
+    <string name="fetching">Fetching Data</string>
 
     <!-- Preference Titles -->
     <string name="main_header">Main</string>
 
-    <string name="tokenbox" translatable="false">API Token</string>
-    <string name="locationbox" translatable="false">Location ID</string>
+    <string name="tokenbox">Authentication Token</string>
+    <string name="locationbox">Location ID</string>
     <string name="provider">Weather Provider</string>
 
     <string name="cloudy" translatable="false">&quot;\n      .--.\n   .-(    ).\n  (___.__)__)&quot;</string>

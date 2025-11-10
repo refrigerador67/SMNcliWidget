@@ -3,6 +3,9 @@
     <string name="app_name">SMNCLI</string>
     <string name="settings">Ajustes</string>
     <string name="locate">Actualizar Ubicación</string>
+    <string name="fetching">Actualizando</string>
     <string name="main_header">General</string>
+    <string name="locationbox">ID de Ubicación</string>
     <string name="provider">Proveedor de Clima</string>
+    <string name="tokenbox">Token de Autenticación</string>
 </resources>
