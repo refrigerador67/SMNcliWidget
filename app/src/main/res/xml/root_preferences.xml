@@ -8,12 +8,19 @@
             app:entryValues="@array/provider_values"
             app:key="provider"
             app:title="@string/provider" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/main_header" >
+        <EditTextPreference
+            app:enabled="false"
+            app:key="apiurl"
+            app:title="@string/apiurl"
+            app:useSimpleSummaryProvider="true" />
         <EditTextPreference
             app:enabled="false"
             app:key="APIauth"
             app:title="@string/tokenbox"
             app:useSimpleSummaryProvider="true" />
-
         <EditTextPreference
             app:enabled="false"
             app:key="locationid"
