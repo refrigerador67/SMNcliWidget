@@ -3,11 +3,12 @@
     <PreferenceCategory app:title="@string/main_header">
 
         <ListPreference
-            app:defaultValue="1"
+            app:defaultValue="openmeteo"
             app:entries="@array/provider_strings"
             app:entryValues="@array/provider_values"
             app:key="provider"
-            app:title="@string/provider" />
+            app:title="@string/provider"
+            app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
     <PreferenceCategory app:title="@string/smn_header" >
