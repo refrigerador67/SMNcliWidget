@@ -10,7 +10,7 @@
             app:title="@string/provider" />
 
     </PreferenceCategory>
-    <PreferenceCategory app:title="@string/main_header" >
+    <PreferenceCategory app:title="@string/smn_header" >
         <EditTextPreference
             app:enabled="false"
             app:key="apiurl"
