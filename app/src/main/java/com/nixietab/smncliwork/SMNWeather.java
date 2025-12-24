@@ -53,7 +53,7 @@ public class SMNWeather {
     }
 
     // actually fetch the data
-    public static JSONObject fetchWeatherData(int locationId, String jwtToken, String API_BASE_WEATHER) throws IOException, JSONException {
+    public static JSONObject fetchWeatherData(String locationId, String jwtToken, String API_BASE_WEATHER) throws IOException, JSONException {
         handleSSLHandshake();
         URL url = new URL(API_BASE_WEATHER + locationId);
         HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
@@ -78,7 +78,7 @@ public class SMNWeather {
     }
 
     // returns the stuff based on the location ID
-    public static Map<String, String> getWeatherInfoByLocationId(int locationId, String jwtToken, String API_BASE) throws IOException, JSONException {
+    public static Map<String, String> getWeatherInfoByLocationId(String locationId, String jwtToken, String API_BASE) throws IOException, JSONException {
         JSONObject w = fetchWeatherData(locationId, jwtToken, API_BASE);
         if (w == null) return null;
 
