@@ -4,8 +4,8 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.widget.RemoteViews
-import android.util.Log
 import android.view.View
+import androidx.core.content.edit
 import androidx.preference.PreferenceManager.getDefaultSharedPreferences
 import com.nixietab.smncliwork.SMNWeather.getWeatherInfoByLocationId
 import java.util.Calendar
@@ -44,9 +44,11 @@ class WidgetProvider : AppWidgetProvider() {
                     val wind = jsonData.getValue("wind_speed")
                     val widgetText = "$time\n$temp °C\nHumidity: $humidity%\nPressure: $pressure hPa\nWind: $wind km/h"
 
-                    Log.i("lol",widgetText)
                     views.setViewVisibility(R.id.widgetBar, View.GONE)
                     views.setTextViewText(R.id.textView, widgetText)
+                    sharedPreferences.edit {
+                        putString("lastText", widgetText)
+                    }
                 }
                 Thread.sleep(10000)
                 appWidgetManager.updateAppWidget(appWidgetId, views) // Tell the AppWidgetManager to perform an update on the current widget
