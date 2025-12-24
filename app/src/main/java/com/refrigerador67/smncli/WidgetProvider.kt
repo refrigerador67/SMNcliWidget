@@ -7,6 +7,7 @@ import android.widget.RemoteViews
 import android.util.Log
 import android.view.View
 import androidx.preference.PreferenceManager.getDefaultSharedPreferences
+import com.nixietab.smncliwork.SMNWeather.getWeatherInfoByLocationId
 import java.util.Calendar
 
 
@@ -26,8 +27,12 @@ class WidgetProvider : AppWidgetProvider() {
             )
 
             Thread {
+                var jsonData: MutableMap<String, String>? = mutableMapOf()
+                when (sharedPreferences?.getString("provider", "openmeteo")) {
+                    "openmeteo" -> {jsonData = getWeatherInfo(sharedPreferences.getString("lat", null), sharedPreferences.getString("lon", null))}
+                    "smn" -> {jsonData = getWeatherInfoByLocationId(sharedPreferences.getString("locationid", null), sharedPreferences.getString("APIauth", null), sharedPreferences.getString("apiurl", null))}
+                }
                 // Code to be executed in the new thread
-                val jsonData = getWeatherInfo(sharedPreferences.getString("lat", null), sharedPreferences.getString("lon", null))
 
                 if (jsonData != null){
 
